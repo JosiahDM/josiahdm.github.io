@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+    <title>Josiah Moye</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+	    vertical-align: baseline;
+	    box-sizing: border-box;
+	}
+
+	html {
+		width:100%;
+		height: 100%;
+		min-height: 100%;
+	}
+
+    body {
+        background-color: #FAFAFA;
+        font: 300 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  		color: #0A0A0A;
+  		width: 100%;
+  		height: 100%;
+  		min-height: 100%;
+    }
+
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+
+    #wrap {
+    	background-color: #FFFFFF;
+    	width: 70%;
+    	max-width:45em;
+    	margin:0 auto;
+    	min-height: 100%;
+    	height:auto;
+    	padding:.75em;
+    	position: relative;
+        border-radius:.4em;
+        border:1px solid #F5F5F5;
+    }
+
+
+    
+    .header {
+    	width:100%;
+    	margin:0 auto;
+    	height: 56px;
+    	border-bottom:2px dotted #E3E3E3;
+    	font-weight: 400;
+        padding-left:1.5em;
+    }
+    .header a:link, a:visited {
+        color: #0A0A0A;
+        text-decoration: none;
+    }
+
+    .header ul {
+    	list-style: none;
+    	font-weight:600;
+    }
+
+    .header-links {
+    	text-align: right;
+    	display: inline-block;
+    	position: absolute;
+    	top: 0px;
+    	right: 10px;
+    	margin:.8em 35px;
+    }
+
+    .site-title {
+    	font-size:26px;
+    	.site-title, .site-title:visited {
+    		color: #0A0A0A; }
+
+    }
+
+    #main {
+    	width:100%;
+    	margin:0 auto;
+    	border-bottom:2px dotted #E3E3E3;
+    	height: auto;
+    	min-height:100%;
+        padding:1.5em;
+    }
+
+    #main p, h1, h2, h3, h4 {
+        margin-bottom:.8em;
+    }
+
+
+
+
+     @media (max-width: 700px) {
+        body {
+            background-color: #fff;
+            width: 100%;
+        }
+        div {
+            width:100%;
+            margin: 0 auto;
+            border-radius: 0;
+
+        }
+        #wrap {
+        	width:100%;
+        	padding:.75em;
+        }
+    }
+
+    .codeblock {
+    	background-color: #EFF0F1;
+    	padding: 0 5px;
+    	border-left: 1px solid #ccc;
+    	border-right: 1px solid #ccc;
+    	border-bottom: 1px solid #ccc;
+    }
+
+    </style>    
+</head>
+
+<body>
+
+<div id="wrap">
+
+	<div class="header">
+		<div class="site-title">
+			<a href="/">Josiah Moye</a>
+		</div>
+		<ul class="header-links">
+			<li><a href="about.html">About</a></li>
+			<li><a href="https://github.com/josiahdm">GitHub</a></li>
+		</ul>
+	</div>
+
+	<div id="main">
+        <p>Switch and If/else are two types of program control statements. They allow you to control the flow of code execution based on the conditions in the statements. This is one of the fundamental pieces of any programming language, because we need to be able to say "if this is true, do this." Without this ability, our programs would be pretty inflexible and much less useful.</p>
+
+        <h3>How they work:</h3>
+
+        <p>First I'll talk about if/else. It's pretty much just like it sounds. "If one condition, do this. Else (otherwise), do this." Here is the syntax in Java:</p>
+
+        <div class="codeblock"><pre><code>if(condition) {
+    //statement 1;
+}
+else {
+    //statement 2;
+}</code></pre></div>
+
+        <p>With this if/else we get two branches of execution. If the condition within parentheses is true, statement 1 will execute, and statement 2 will not run. If the condition within parentheses is false, statement 1 will not run, and statement 2 will be executed. In either case, the program flow continues directly after the final closing brace.</p>
+
+        <p>If/else can also be expanded with "else if..." additions and even nested if statements. I won't go into that here since my focus is to compare the if/else to switch statements. </p>
+
+        <p>With that said, here is the form of a switch statement:</p>
+
+        <div class="codeblock"><pre><code>switch(expression) {
+case constant1:
+    statement 1;
+    break;
+case constant2:
+    statement 2;
+    break;
+case constant3:
+    statement 3;
+    break;
+default:
+    default statement;
+}</code></pre></div>
+
+        <p>Within the parentheses is an expression. If that expression is equal to one of the constants, that branch of the switch statement is executed. So for instance if expression was equal to constant2, statement2 will execute. Followed by the break; statement, which will break the flow out of the switch statement, and continue after the closing brace. The break is important because without it the program would continue to the next case statement.</p>
+
+
+        <h3>So what's the difference? Why use one over the other?</h3>
+
+        <p>The difference is that if/else can select based on broader, more expressive conditions. You can use tests like less than, greater than, etc. This is useful if you don't know the specific values that would be needed to trigger a switch statement, or maybe the potential values are within a large range. 
+
+    	<p>The switch statement requires literal values of type <span class="codeblock"><code>byte, short, int, char, enum, or String</code></span> (in JDK7 and later). This means for a switch statement to make sense, you would either need a function that returns a value of these types, or a direct input of these types that matches the values within the switch statement. If/else statements only need conditions which can be evaluated to true or false. This makes if/else statements a bit more flexible and possibly easier to implement for most purposes. </p>
+
+        <p>One thing a switch statement can be more useful for is user input menus. Since these menus will have a known, relatively small set of specific options, switch statements are probably more efficient to use in this case. Switch could also be useful for error or status codes. If you have some program running that returns codes based on success or failure, you can use switch statements to control what happens next given that certain known, static code. </p>
+
+
+	</div>
+
+</div>
+
+</body>
+</html>
