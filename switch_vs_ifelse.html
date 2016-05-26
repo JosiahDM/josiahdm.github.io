@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Josiah Moye</title>
+    <title>switch vs. if/else</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -10,26 +10,26 @@
 
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-	    margin: 0;
-	    padding: 0;
-	    border: 0;
-	    vertical-align: baseline;
-	    box-sizing: border-box;
-	}
+        margin: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: baseline;
+        box-sizing: border-box;
+    }
 
-	html {
-		width:100%;
-		height: 100%;
-		min-height: 100%;
-	}
+    html {
+        width:100%;
+        height: 100%;
+        min-height: 100%;
+    }
 
     body {
         background-color: #FAFAFA;
         font: 300 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  		color: #0A0A0A;
-  		width: 100%;
-  		height: 100%;
-  		min-height: 100%;
+        color: #0A0A0A;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
     }
 
     a:link, a:visited {
@@ -38,14 +38,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 
     #wrap {
-    	background-color: #FFFFFF;
-    	width: 70%;
-    	max-width:45em;
-    	margin:0 auto;
-    	min-height: 100%;
-    	height:auto;
-    	padding:.75em;
-    	position: relative;
+        background-color: #FFFFFF;
+        width: 70%;
+        max-width:45em;
+        margin:0 auto;
+        min-height: 100%;
+        height:auto;
+        padding:.75em;
+        position: relative;
         border-radius:.4em;
         border:1px solid #F5F5F5;
     }
@@ -53,11 +53,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
     
     .header {
-    	width:100%;
-    	margin:0 auto;
-    	height: 56px;
-    	border-bottom:2px dotted #E3E3E3;
-    	font-weight: 400;
+        width:100%;
+        margin:0 auto;
+        height: 75px;
+        border-bottom:2px dotted #E3E3E3;
+        font-weight: 400;
         padding-left:1.5em;
     }
     .header a:link, a:visited {
@@ -66,43 +66,41 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 
     .header ul {
-    	list-style: none;
-    	font-weight:600;
+        list-style: none;
+        font-weight:600;
     }
 
     .header-links {
-    	text-align: right;
-    	display: inline-block;
-    	position: absolute;
-    	top: 0px;
-    	right: 10px;
-    	margin:.8em 35px;
+        text-align: right;
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        margin:.8em 35px;
     }
 
     .site-title {
-    	font-size:26px;
-    	.site-title, .site-title:visited {
-    		color: #0A0A0A; }
+        font-size:26px;
+        padding-top:10px;
+        .site-title, .site-title:visited {
+            color: #0A0A0A; }
 
     }
 
     #main {
-    	width:100%;
-    	margin:0 auto;
-    	border-bottom:2px dotted #E3E3E3;
-    	height: auto;
-    	min-height:100%;
+        width:100%;
+        margin:0 auto;
+        border-bottom:2px dotted #E3E3E3;
+        height: auto;
+        min-height:100%;
         padding:1.5em;
     }
 
-    #main p, h1, h2, h3, h4 {
+    #main p {
         margin-bottom:.8em;
     }
 
-
-
-
-     @media (max-width: 700px) {
+    @media (max-width: 700px) {
         body {
             background-color: #fff;
             width: 100%;
@@ -114,8 +112,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
         }
         #wrap {
-        	width:100%;
-        	padding:.75em;
+            width:100%;
+            padding:.2em;
+        }
+
+        #main {
+            padding: .1em;
         }
     }
 
@@ -145,6 +147,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	</div>
 
 	<div id="main">
+
+        <h1>Java Basics: switch vs. if/else</h1>
+
         <p>Switch and If/else are two types of program control statements. They allow you to control the flow of code execution based on the conditions in the statements. This is one of the fundamental pieces of any programming language, because we need to be able to say "if this is true, do this." Without this ability, our programs would be pretty inflexible and much less useful.</p>
 
         <h3>How they work:</h3>

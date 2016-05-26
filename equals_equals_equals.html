@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+<head>
+    <title>equals, equals, EQUALS, Oh My!</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: baseline;
+        box-sizing: border-box;
+    }
+
+    html {
+        width:100%;
+        height: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        background-color: #FAFAFA;
+        font: 300 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #0A0A0A;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+    }
+
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+
+    #wrap {
+        background-color: #FFFFFF;
+        width: 70%;
+        max-width:45em;
+        margin:0 auto;
+        min-height: 100%;
+        height:auto;
+        padding:.75em;
+        position: relative;
+        border-radius:.4em;
+        border:1px solid #F5F5F5;
+    }
+
+
+    
+    .header {
+        width:100%;
+        margin:0 auto;
+        height: 75px;
+        border-bottom:2px dotted #E3E3E3;
+        font-weight: 400;
+        padding-left:1.5em;
+    }
+    .header a:link, a:visited {
+        color: #0A0A0A;
+        text-decoration: none;
+    }
+
+    .header ul {
+        list-style: none;
+        font-weight:600;
+    }
+
+    .header-links {
+        text-align: right;
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        margin:.8em 35px;
+    }
+
+    .site-title {
+        font-size:26px;
+        padding-top:10px;
+        .site-title, .site-title:visited {
+            color: #0A0A0A; }
+
+    }
+
+    #main {
+        width:100%;
+        margin:0 auto;
+        border-bottom:2px dotted #E3E3E3;
+        height: auto;
+        min-height:100%;
+        padding:1.5em;
+    }
+
+    #main p {
+        margin-bottom:.8em;
+    }
+
+    @media (max-width: 700px) {
+        body {
+            background-color: #fff;
+            width: 100%;
+        }
+        div {
+            width:100%;
+            margin: 0 auto;
+            border-radius: 0;
+
+        }
+        #wrap {
+            width:100%;
+            padding:.2em;
+        }
+
+        #main {
+            padding: .1em;
+        }
+    }
+
+    .codeblock {
+    	background-color: #EFF0F1;
+    	padding: 0 5px;
+    	border-left: 1px solid #ccc;
+    	border-right: 1px solid #ccc;
+    	border-bottom: 1px solid #ccc;
+    }
+
+</style> 
+
+</head>
+
+<body>
+
+<div id="wrap">
+
+	<div class="header">
+		<div class="site-title">
+			<a href="/">Josiah Moye</a>
+		</div>
+		<ul class="header-links">
+			<li><a href="about.html">About</a></li>
+			<li><a href="https://github.com/josiahdm">GitHub</a></li>
+		</ul>
+	</div>
+
+	<div id="main">
+
+		<h1>Java Basics: equals, equals, EQUALS, Oh My!</h1>
+
+		<h3>Or, the difference between "=", "==", and ".equals()"</h3>
+
+		<h2>=</h2>
+
+		<p>The fancy term for the "=" sign is the assignment operator. It assigns values to variables. So if you write <span class="codeblock"><code>int x = 10;</code></span> the variable x now contains the integer 10. It will contain 10 until another assignment operator is used to change it's value.</p>
+
+		<p>You can do math after the "=" sign. So if you write <span class="codeblock"><code>x = 5 + 5;</code></span> the program will run the calculation then assign the value 10 to x.</p>
+
+		<p>You can even run functions after the "=" sign. For example: <span class="codeblock"><code>int x = calculateSomething();</code></span> Will run the calculateSomething() function and whatever it returns will be stored in x. </p>
+
+		<p>Also it's nice to know there are various shortcuts you can use. A common thing we need to do is add some value to a variable. One way we can do it is say <span class="codeblock"><code>x = x + 5;</code></span> What this does is takes whatever is in x, and adds 5. So if x started at 10 here, x will end up being 15.</p>
+
+		<p>This works, but we have a nice shortcut for it: the += operator. Using this operator, we would just write <span class="codeblock"><code>x += 5;</code></span> This does exactly the same thing&mdash;adds 5 to whatever value is in x&mdash;but is a bit less typing. You can get the same functionality with any of the basic arithmetic operations: -=, *=, /=, and %=. </p>
+
+		<p>There are 2 more operators that kind of relate to the assignment operator, and those are the increment and decrement operators. So if you want to add or subtract one from a variable, it's simply ++ or -- following the variable. If we had x = 10; Then we do x++ and now the value of x is 11. Decrement works in the same way, subtracting 1: x--; These are useful in loop counters. (There is also ++x and --x which increment immediately before returning the value. But that can be saved for another post.)</p>
+
+		<h2>==</h2>
+
+		<p>== is known as the "equal to" operator. It's part of a group of operators called boolean operators, which are used to compare values (or object references). The == operator determines whether one value is equal to another value. So if we were to write (10 == 10) that would evaluate to true. If we previously set a variable x to 10, then we could write (x == 10) and that would evaluate to true. We can even evaluate variables such as (x == y) which would be either true or false depending on the values stored in each variable.</p>
+
+		<p>== is generally used in if/else statements and loops to check for conditions. For example: </p>
+		<div class="codeblock">
+			<pre><code>if (x == 1) {
+  // Do this
+}
+else {
+  // Do this
+}</code></pre>
+		</div>
+		</br>
+		<h2>.equals()</h2>
+
+		<p>The thing about == is it's very literal. It only becomes true if the things being evaluated really are equal to each other. This works very intuitively for primitive types like int and double, but doesn't work if trying to compare strings. This is where .equals() comes in to play. </p>
+
+		<p>Lets say we have two string variables named a, and b. To initialize them we might do 
+		<span class="codeblock"><code>String a = "abcd"; String b = "abcd"; </code></span>. This actually creates two Objects of type "String". So if we do (a == b) it will be false, because a and b are different object references. Now, if we did <span class="codeblock"><code>String a = "abcd"; String b = a;</code></span> then they would refer to the same object since we set b = a. In this case (a == b) would be true. </p>
+
+		<p>Therefore, to compare Strings for equality, we have to use the String method .equals() . This method checks each character within the Strings to be compared. If the characters are all the same, then it will return true. If not, false.</p>
+
+		<p>For our previous example, using .equals() with a and b, we could write: <span class="codeblock"><code>a.equals(b);</code></span> which returns true, or <span class="codeblock"><code>b.equals(a);</code></span> for the same result. </p>
+
+
+	</div>
+
+</div>
+
+</body>
+</html>
