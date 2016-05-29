@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+    <title>Java Import</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: baseline;
+        box-sizing: border-box;
+    }
+
+    html {
+        width:100%;
+        height: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        background-color: #FAFAFA;
+        font: 300 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #0A0A0A;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+    }
+
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+
+    #wrap {
+        background-color: #FFFFFF;
+        width: 70%;
+        max-width:45em;
+        margin:0 auto;
+        min-height: 100%;
+        height:auto;
+        padding:.75em;
+        position: relative;
+        border-radius:.4em;
+        border:1px solid #F5F5F5;
+    }
+
+
+    
+    .header {
+        width:100%;
+        margin:0 auto;
+        height: 75px;
+        border-bottom:2px dotted #E3E3E3;
+        font-weight: 400;
+        padding-left:1.5em;
+    }
+    .header a:link, a:visited {
+        color: #0A0A0A;
+        text-decoration: none;
+    }
+
+    .header ul {
+        list-style: none;
+        font-weight:600;
+    }
+
+    .header-links {
+        text-align: right;
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        margin:.8em 35px;
+    }
+
+    .site-title {
+        font-size:26px;
+        padding-top:10px;
+        .site-title, .site-title:visited {
+            color: #0A0A0A; }
+
+    }
+
+    #main {
+        width:100%;
+        margin:0 auto;
+        border-bottom:2px dotted #E3E3E3;
+        height: auto;
+        min-height:100%;
+        padding:1.5em;
+    }
+
+    #main p {
+        margin-bottom:.8em;
+    }
+
+    @media (max-width: 700px) {
+        body {
+            background-color: #fff;
+            width: 100%;
+        }
+        div {
+            width:100%;
+            margin: 0 auto;
+            border-radius: 0;
+
+        }
+
+        #wrap {
+            width:100%;
+            padding:.2em;
+        }
+
+        #main {
+            padding: .1em;
+        }
+    }
+
+    .codeblock {
+    	background-color: #EFF0F1;
+    	padding: 0 5px;
+    	border-left: 1px solid #ccc;
+    	border-right: 1px solid #ccc;
+    	border-bottom: 1px solid #ccc;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    blockquote {
+      background: #f9f9f9;
+      border-left: 10px solid #ccc;
+      margin: 1.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+    }
+
+    </style>    
+</head>
+
+<body>
+
+<div id="wrap">
+
+	<div class="header">
+		<div class="site-title">
+			<a href="/">Josiah Moye</a>
+		</div>
+		<ul class="header-links">
+			<li><a href="about.html">About</a></li>
+			<li><a href="https://github.com/josiahdm">GitHub</a></li>
+		</ul>
+	</div>
+
+	<div id="main">
+
+        <h1>Java Basics: import</h1>
+
+        <p>Java has a huge amount of built in tools that we can leverage to build software. This is a huge benefit because we don't have to build these tools ourselves from the ground up, which can save us a lot of time and allow us to focus on MAKING things that work for people, and not necessarily needing to know how it's working at every possible layer 100% of the time.</p>
+
+        <p>Of course I do think we should strive to learn as deeply as we can on many topics, we don't need 100% understanding to make useful things. If we waited until that point we'd never make anything! To quote a <a href="http://prog21.dadgum.com/188.html">great blog that I love</a>: </p>
+
+        <p><blockquote>"That is why big companies hire young, enthusiastic coders. Not because they're as clueless as my madman, but because they can self-motivate beyond the barrier of full understanding and into imperfect and brute force solutions. I'd want to stop and rework the abstractions I'm using and break things into lots of smaller, reliable, understandable pieces. My code might be more bullet-proof in the end, but I still have a level of admiration for people who can bang out complex apps before they become jaded enough to realize it's not that easy."</blockquote></p>
+
+        <p>So to come back to the topic of the article...using import (and the many built in Java packages) gives us a ton of cool things that can make our lives easier and more interesting.</p>
+
+        <h3>So what does import do?</h3>
+
+        <p>When you write <span class="codeblock"><code>import java.util.Scanner;</code></span> you can think of it as "importing" all of the functionality of the java.util.Scanner class into your code, and you can treat Scanner as if it was already "inside" your code. </p>
+
+        <p>It doesn't actually import the code, however. What it does is tells the compiler where to look for "Scanner" when you decide to create a new Scanner object.</p>
+
+
+        <p>Without import you'd have to write <span class="codeblock"><code>java.util.Scanner keyboard = new java.util.Scanner(System.in);</code></span> This works but it's much nicer to be able to just write <span class="codeblock"><code>Scanner keyboard = new Scanner(System.in);</code></span>. Using import tells the compiler "when I write Scanner, I mean java.util.Scanner, k thanks, you know what to do." </p>
+
+        <h3>What's this java.util business?</h3>
+
+        <p>In kind of the same way we have directories in our PCs, Java has "directories" called packages. Our different PC directories are like /etc or /usr (or if you use windows: C:\Program Files, C:\System...etc). But we can go further down into the hierarchy with /usr/bin/... packages work in much the same way. </p>
+
+        <p>Top level packages include java, javax, and org. Within some packages we can drill down further. For example java.util to java.util.concurrent. Much like directories contain files and other directories, packages contain Classes, Interfaces, and other packages and Java structures. </p>
+
+        <p>Packages help us keep this huge amount of tools organized and logically separated. Also, it keeps code in separate "namespaces" which means we can avoid conflicts in naming things. So if for whatever reason I want to make a class named "Security", it won't conflict with the already made java.security.Security class, since it is in a different namespace. But if I tried to import java.security.Security at that point, it would conflict with my custom Security class.</p>
+
+        <p>My arbitrary example might suck, but the main point is that it keeps things organized and separated when dealing with a huge code base that might otherwise be a jumble of chaos, confusion, and sadness.</p>
+
+
+	</div>
+
+</div>
+
+</body>
+</html>
