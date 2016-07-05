@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+    <title>Return Types</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: baseline;
+        box-sizing: border-box;
+    }
+
+    html {
+        width:100%;
+        height: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        background-color: #FAFAFA;
+        font: 300 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #0A0A0A;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+    }
+
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+
+    #wrap {
+        background-color: #FFFFFF;
+        width: 70%;
+        max-width:45em;
+        margin:0 auto;
+        min-height: 100%;
+        height:auto;
+        padding:.75em;
+        position: relative;
+        border-radius:.4em;
+        border:1px solid #F5F5F5;
+    }
+
+
+    
+    .header {
+        width:100%;
+        margin:0 auto;
+        height: 75px;
+        border-bottom:2px dotted #E3E3E3;
+        font-weight: 400;
+        padding-left:1.5em;
+    }
+    .header a:link, a:visited {
+        color: #0A0A0A;
+        text-decoration: none;
+    }
+
+    .header ul {
+        list-style: none;
+        font-weight:600;
+    }
+
+    .header-links {
+        text-align: right;
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        margin:.8em 35px;
+    }
+
+    .site-title {
+        font-size:26px;
+        padding-top:10px;
+        .site-title, .site-title:visited {
+            color: #0A0A0A; }
+
+    }
+
+    #main {
+        width:100%;
+        margin:0 auto;
+        border-bottom:2px dotted #E3E3E3;
+        height: auto;
+        min-height:100%;
+        padding:1.5em;
+    }
+
+    #main p {
+        margin-bottom:.8em;
+    }
+
+    @media (max-width: 700px) {
+        body {
+            background-color: #fff;
+            width: 100%;
+        }
+        div {
+            width:100%;
+            margin: 0 auto;
+            border-radius: 0;
+
+        }
+
+        #wrap {
+            width:100%;
+            padding:.2em;
+        }
+
+        #main {
+            padding: .1em;
+        }
+    }
+
+    .codeblock {
+    	background-color: #EFF0F1;
+    	padding: 0 5px;
+    	border-left: 1px solid #ccc;
+    	border-right: 1px solid #ccc;
+    	border-bottom: 1px solid #ccc;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    blockquote {
+      background: #f9f9f9;
+      border-left: 10px solid #ccc;
+      margin: 1.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+    }
+
+    </style>    
+</head>
+
+<body>
+
+<div id="wrap">
+
+	<div class="header">
+		<div class="site-title">
+			<a href="/">Josiah Moye</a>
+		</div>
+		<ul class="header-links">
+			<li><a href="about.html">About</a></li>
+			<li><a href="https://github.com/josiahdm">GitHub</a></li>
+		</ul>
+	</div>
+
+	<div id="main">
+
+        <h1>Java Basics: void methods and return types</h1>
+
+        <p>Methods are used to do some action, manipulate some value, and/or do some kind of calculation. Methods help us out because within a method we can write all the instructions we want to happen, and simply write the method wherever we need it. Instead of copy-pasting multiple lines of code (which would be hard to edit later if we had lots of code), we can create a method containing those lines of code, then "call" that method with one line of code, wherever we need to use it.</p>
+
+        <p>When we declare a method, we have to declare whether the method is void, or returns some kind of type. So what does that mean? </p>
+
+        <p>When a method is "void" it will simply run the instructions within the method when called. A void method is kind of like an "action" method. You simply need something done now.</p>
+
+        <h3>Here's an example of a void method:</h3>
+
+        <div class="codeblock">
+        <pre><code>public static void printStars() {
+    System.out.println("**********");
+}</code></pre></div>
+
+        <p>This method (although not very exciting) will print 10 asterisks when we call it. To call it, we would simply write printStars(); on it's own line.</p>
+
+        <p>Another example is the main method in every Java program. The main method is void--it just runs whatever code is inside it.</p>
+
+        <h3>Return Types</h3>
+
+        <p>When a method is declared with a return type, it could look like this:
+
+        <div class="codeblock">
+        <pre><code>public static int add(int a, int b) {
+    return a + b;
+}</code></pre></div>
+        </p>
+        
+        <p>This method will take two parameters, both integers, then "return" an integer result of adding them together. Note that the return type must be the same as what the method is declared as (<span class="codeblock"><code>int</code></span> in this example). An int method can't return a String value, for example. </p>
+
+        <p>You can assign values to variables using return methods. So you could do <span class="codeblock"><code>int x = add(4, 5);</code></span> and x would then store the value that is returned from the add method. In thise case, 9.</p> 
+
+        <p>You can also use the returning method within other method calls to get the value you want. So maybe you wanted to do something like <span class="codeblock"><code>System.out.println( "Your answer is: " + add(4, 5) );</code></span> this would print "Your answer is: 9" because the add method will return 9, and then that will be added to the println() call.</p> 
+
+        <p>Return methods let us run some kind of calculation, get some value back, and use the value in whatever way we need.</p>
+
+        <h3>To sum up: </h3>
+
+        <p>- void methods do not return a value. They just run the code within them.</p>
+
+        <p>- methods with a return type run the code, and then return some value. The value returned must be of the type that is declared. </p>
+
+        <p>- properly created methods can make code easier to write, read, and maintain.</p>
+
+
+	</div>
+
+</div>
+
+</body>
+</html>
